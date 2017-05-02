@@ -1,0 +1,132 @@
+html,
+body {
+	padding: 0;
+	margin: 0;
+	height: 100%;
+	width: 100%;
+
+	color: #333;
+	text-align: center;
+	font-family: Consolas, Courier, sans-serif;
+
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.container {
+	position: relative;
+	width: 1000px;
+	margin: auto;
+	height: 100%;
+}
+
+#direction {
+	position: absolute;
+	top: 20%;
+	width: 100%;
+	height: 30%;
+
+	background: #ccc;
+	border-bottom: 1px solid #333;
+	border-top-left-radius: 7px;
+	border-top-right-radius: 7px;
+	z-index: 2;
+}
+
+#direction > span {
+	display: block;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 3.5em;
+}
+
+#answers {
+	position: absolute;
+	top: 50%;
+	width: 100%;
+	height: 30%;
+
+	display: flex;
+	justify-content: space-between;
+
+	background: #ccc;
+	border-bottom-left-radius: 7px;
+	border-bottom-right-radius: 7px;
+}
+
+#answers > .answer {
+	width: 25%;
+	height: 80%;
+	margin: 0 7px;
+	margin-top: 10%;
+
+	border: 1px solid #333;
+	border-radius: 7px;
+	cursor: pointer;
+
+	-webkit-box-shadow: black 0px 7px 4px -2px;
+	-moz-box-shadow: black 0px 7px 4px -2px;
+	-ms-box-shadow: black 0px 7px 4px -2px;
+	box-shadow: black 0px 7px 4px -2px;
+	transition: background 500ms;
+}
+
+#answers > .answer:hover,
+#answers > .answer.active {
+	background: white;
+}
+
+#answers > .answer.true {
+	background: green !important;
+}
+
+#answers > .answer.false {
+	background: red !important;
+}
+
+#answers > .answer > span {
+	margin: auto;
+	position: relative;
+	/* I use 45% to compensate for something */
+	top: 45%;
+	transform: translateY(-45%);
+	font-size: 2.2em;
+}
+
+#points,
+#bonus-points,
+#timer {
+	position: absolute;
+	padding: 7px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 1.2em;
+}
+
+#points {
+	top: 0;
+	left: 0;
+}
+
+#bonus-points {
+	top: 42px;
+	left: 0;
+}
+
+#timer {
+	top: 0;
+	right: 0;
+}
+
+#timer.warning {
+	color: orange;
+}
+
+#timer.danger {
+	color: red;
+}
